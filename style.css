@@ -1,0 +1,240 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd{
+    margin: 0;
+}
+
+ul[role='list'], ol[role='list']{
+    list-style: none;
+}
+
+html:focus-within{
+    scroll-behavior: smooth;
+}
+
+a:not([class]){
+    text-decoration-skip-ink: auto;
+}
+
+img, picture, svg, video, canvas{
+    max-width: 100%;
+    display: block;
+}
+
+input, button, textarea, select{
+    font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce){
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+body, html{
+    height: 100%;
+}
+
+body{
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+:root{
+    --primary-light-red: hsla(0, 100%, 67%, 0.1);
+    --primary-orangey-yellow: hsla(39, 100%, 56%, 0.1);
+    --primary-green-tea: hsla(166, 100%, 37%, 0.1);
+    --primary-cobalt-blue: hsla(234, 85%, 45%, 0.1);
+
+    --primary-font-color-red: hsl(0, 100%, 67%);
+    --primary-font-color-yellow: hsl(39, 100%, 56%);
+    --primary-font-color-green-tea: hsl(166, 100%, 37%);
+    --primary-font-cobalt-blue: hsl(234, 85%, 45%);
+
+    --gradient-light-slate-bg: hsl(252, 100%, 67%);
+    --gradient-light-royal-blue-bg: hsl(241, 81%, 54%);
+    --gradient-violet-blue-circle: hsla(256, 72%, 46%, 1);
+    --gradient-persian-blue-circle: hsla(241, 72%, 46%, 0);
+
+    --neutral-white: hsl(0, 0%, 100%);
+    --neutral-pale-blue: hsl(221, 100%, 96%);
+    --neutral-light-lavender: hsl(241, 100%, 89%);
+    --neutral-dark-gray-blue: hsl(224, 30%, 27%);
+
+    /*Use transparency to get the colour variations necessary to match the design. 
+    Hint: look into using hsla()*/
+
+    --font-size-paragraphs: 1.125rem;
+    --font-family: "Hanken Grotesk";
+
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    --font-weight-extra-bold: 800;
+}
+
+.hero{
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    font-family: var(--font-family);
+    border-radius: 25px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, 
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.section{
+    width: 50%;
+}
+
+.result{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: 
+    linear-gradient(to bottom, 
+    var(--gradient-light-slate-bg), 
+    var(--gradient-light-royal-blue-bg));
+    padding: 2em 3em;
+    border-radius: 25px;
+}
+
+.result h1{
+    text-align: center;
+    margin: 0 0 1.5em 0;
+    font-weight: var(--font-weight-medium);
+    color: var(--neutral-light-lavender);
+    font-size: var(--font-size-paragraphs);
+}
+
+.result-score{
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 50%;
+    background-image: 
+    linear-gradient(to bottom, 
+    var(--gradient-violet-blue-circle),
+    var(--gradient-persian-blue-circle));
+    color: var(--neutral-light-lavender);
+}
+
+.result-score .big-result{
+    color: var(--neutral-white);
+    font-weight: var(--font-weight-bold);
+    font-size: 3rem;
+}
+
+.result-score-indepth{
+    margin-top: 1em;
+    text-align: center;
+    color: var(--neutral-light-lavender);
+}
+
+.result-score-indepth h2{
+    color: var(--neutral-white);
+    font-weight: var(--font-weight-medium);
+    font-size: 1.5rem;
+}
+
+.summary{
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    font-family: var(--font-family);
+}
+
+.summary-h1{
+    font-weight: var(--font-weight-bold);
+    font-size: 1.12rem;
+    margin-bottom: 1em;
+}
+
+.cards{
+    display: flex;
+    justify-content: space-between;
+    padding: .5em;
+    border-radius: 6px;
+    margin-bottom: 1em;
+}
+
+.cards span{
+    color: var(--neutral-dark-gray-blue);
+    font-weight: var(--font-weight-bold);
+}
+
+.cards p{
+    color: gray;
+}
+
+.cards:first-child{
+    background-color: var(--primary-light-red);
+    color: var(--primary-font-color-red);
+}
+
+.cards:nth-child(2){
+    background-color: var(--primary-orangey-yellow);
+    color: var(--primary-font-color-yellow);
+}
+
+.cards:nth-child(3){
+    background-color: var(--primary-green-tea);
+    color: var(--primary-font-color-green-tea);
+}
+
+.cards:last-child{
+    background-color: var(--primary-cobalt-blue);
+    color: var(--primary-font-cobalt-blue);
+}
+
+.cards div{
+    display: flex;
+}
+
+.cards img{
+    margin-right: .5em;
+    transition: transform 350ms;
+}
+
+button{
+    padding: .5em 1em;
+    margin-top: 1em;
+    background-color: var(--neutral-dark-gray-blue);
+    color: var(--neutral-white);
+    border: none;
+    border-radius: 100px;
+    transition: transform 350ms;
+}
+
+button:hover, button:focus, .cards img:hover, .cards img:focus{
+    transform: scale(1.03);
+}
+
+@media (max-width: 460px){
+    .hero{
+        flex-direction: column;
+    }
+    .section{
+        width: 100%;
+    }
+}
